@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tokaev sila</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="tokaev.css">
+    </head>
+    <body>
+        <div id="timer">Loading...</div>
+        <a href="#gymn">
+            <img class="pic" src="нг токаев.png" alt="Нажмите для перехода">
+        </a>
+
+        <audio src="gimn-kazahstana.mp3" autoplay></audio>
+
+        <h2 id="text">Kazakh's Gymn</h2>
+
+        <div id="gymn" class="song">
+            Алтын күн аспаны,<br>
+            Алтын дән даласы,<br>
+            Ерліктің дастаны,<br>
+            Еліме қарашы!<br>
+            Ежелден ер деген,<br>
+            Даңқымыз шықты ғой.<br>
+            Намысын бермеген,<br>
+            Қазағым мықты ғой!<br>
+            <br>
+            Қайырмасы:<br>
+            <br>
+            Менің елім, менің елім,<br>
+            Гүлің болып егілемін,<br>
+            Жырың болып төгілемін, елім!<br>
+            Туған жерім менің – Қазақстаным!<br>
+            <br>
+            
+            Ұрпаққа жол ашқан,<br>
+            Кең байтақ жерім бар.<br>
+            Бірлігі жарасқан,<br>
+            Тәуелсіз елім бар.<br>
+            Қарсы алған уақытты,<br>
+            Мәңгілік досындай,<br>
+            Біздің ел бақытты,<br>
+            Біздің ел осындай!<br>
+            <br>
+            Қайырмасы:<br>
+            <br>
+            Менің елім, менің елім,<br>
+            Гүлің болып егілемін,<br>
+            Жырың болып төгілемін, елім!<br>
+            Туған жерім менің – Қазақстаным!<br>
+        </div>
+
+        <script>
+            function updateTimer() {
+                const now = new Date();
+                const nextYear = now.getFullYear() + 1;
+                const newYear = new Date(`January 1, ${nextYear} 00:00:00`);
+                const diff = newYear - now;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                const timerElement = document.getElementById('timer');
+                timerElement.textContent = `До Нового года: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+            }
+
+            setInterval(updateTimer, 1000);
+        </script>
+    </body>
+</html>
